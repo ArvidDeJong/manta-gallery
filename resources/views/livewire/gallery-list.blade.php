@@ -1,20 +1,17 @@
 <flux:main container>
     <x-manta.breadcrumb :$breadcrumb />
-    <flux:header>
-        <x-slot:title>
+    <div class="mb-8 mt-4 flex items-center justify-between">
+        <div>
             <flux:button icon="plus" href="{{ route($this->module_routes['create']) }}">
                 Toevoegen
             </flux:button>
-        </x-slot:title>
-        <x-slot:actions>
-            <div style="width: 300px">
-                <flux:input type="search" wire:model.live="search" placeholder="Zoeken..." />
-            </div>
-        </x-slot:actions>
-    </flux:header>
-
-    <flux:card />
+        </div>
+        <div style="width: 300px">
+            <flux:input type="search" wire:model="search" placeholder="Zoeken..." />
+        </div>
+    </div>
     <x-manta.tables.tabs :$tablistShow :$trashed />
+
     <flux:table :paginate="$items">
         <flux:table.columns>
             <flux:table.column>
@@ -36,8 +33,6 @@
         <flux:table.rows>
             @foreach ($items as $item)
                 <flux:table.row data-id="{{ $item->id }}">
-
-                    <flux:table.column></flux:table.column>
 
                     @if ($this->fields['uploads']['active'])
                         <flux:table.cell><x-manta.tables.image :item="$item->image" /></flux:table.cell>

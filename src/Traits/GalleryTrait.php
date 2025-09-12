@@ -26,7 +26,7 @@ trait GalleryTrait
         $this->config = $settings;
 
         $this->fields = $settings['fields'] ?? [];
-        $this->tab_title = $settings['tab_title'] ?? null;
+        $this->tab_title = 'title'; // $settings['tab_title'] ?? 'title';
         $this->moduleClass = 'Darvis\MantaGallery\Models\Gallery';
     }
 

@@ -3,6 +3,7 @@
 return [
     "name" => "gallery",
     "title" => "Albums",
+    "tabtitle" => "title",
     "module_name" => [
         "single" => "Album",
         "multiple" => "Albums"
