@@ -9,10 +9,10 @@ This document describes the API endpoints and programmatic usage of the Manta Ga
 The main model for gallery form submissions.
 
 ```php
-use Darvis\Mantagallery\Models\gallery;
+use Darvis\MantaGallery\Models\Gallery;
 
 // Create a new gallery
-$gallery = gallery::create([
+$gallery = Gallery::create([
     'firstname' => 'John',
     'lastname' => 'Doe',
     'email' => 'john@example.com',
@@ -20,10 +20,10 @@ $gallery = gallery::create([
     'comment' => 'I would like more information...'
 ]);
 
-// Find gallerys
-$gallery = gallery::find(1);
-$gallerys = gallery::where('active', true)->get();
-$recentGallerys = gallery::latest()->take(10)->get();
+// Find galleries
+$gallery = Gallery::find(1);
+$galleries = Gallery::where('active', true)->get();
+$recentGalleries = Gallery::latest()->take(10)->get();
 
 // Update gallery
 $gallery->update([
@@ -40,26 +40,26 @@ $gallery->delete();
 
 ```php
 // Active gallerys only
-gallery::active()->get();
+Gallery::active()->get();
 
 // By company
-gallery::where('company_id', 1)->get();
+Gallery::where('company_id', 1)->get();
 
 // Recent submissions
-gallery::recent()->get();
+Gallery::recent()->get();
 
 // Search by email
-gallery::where('email', 'like', '%@example.com')->get();
+Gallery::where('email', 'like', '%@example.com')->get();
 ```
 
 ### Relationships
 
 ```php
 // Get gallery with files (if using uploads)
-$gallery = gallery::with('uploads')->find(1);
+$gallery = Gallery::with('uploads')->find(1);
 
 // Get gallery creator
-$gallery = gallery::with('creator')->find(1);
+$gallery = Gallery::with('creator')->find(1);
 ```
 
 ## REST API Endpoints
@@ -84,7 +84,7 @@ Route::get('/gallery-forms', [GalleryController::class, 'forms']);
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Darvis\Mantagallery\Models\gallery;
+use Darvis\MantaGallery\Models\Gallery;
 use Illuminate\Http\JsonResponse;
 
 class GalleryController extends Controller
@@ -193,7 +193,7 @@ $rules = [
 ### Model Events
 
 ```php
-use Darvis\Mantagallery\Models\gallery;
+use Darvis\MantaGallery\Models\Gallery;
 
 // Listen for gallery creation
 gallery::created(function ($gallery) {
@@ -215,7 +215,7 @@ gallery::updated(function ($gallery) {
 
 ```php
 // Store custom data in option fields
-$gallery = gallery::create([
+$gallery = Gallery::create([
     'firstname' => 'John',
     'lastname' => 'Doe',
     'email' => 'john@example.com',
@@ -236,7 +236,7 @@ $metadata = json_decode($gallery->option_3, true);
 
 ```php
 // Store complex data in JSON field
-$gallery = gallery::create([
+$gallery = Gallery::create([
     'firstname' => 'John',
     'lastname' => 'Doe',
     'email' => 'john@example.com',

@@ -77,7 +77,7 @@ For support and questions:
 - 📧 Email: info@arvid.nl
 - 🌐 Website: [arvid.nl](https://arvid.nl)
 - 📖 Documentation: See the `/docs` directory for comprehensive guides
-- 🐛 Issues: Create an issue in the repository
+- 🐛 Issues: [Create an issue on GitHub](https://github.com/ArvidDeJong/manta-gallery/issues)
 
 ## Contributing
 
@@ -93,5 +93,5 @@ The MIT License (MIT). See [License File](LICENSE.md) for more information.
 
 ## Credits
 
-- [Darvis](https://github.com/darvis)
-- [All contributors](../../contributors)
+- [Arvid de Jong](https://github.com/ArvidDeJong)
+- [All contributors](https://github.com/ArvidDeJong/manta-gallery/contributors)

@@ -19,5 +19,5 @@ The **darvis/manta-gallery** module is a Laravel package designed to integrate w
 - **Name**: darvis/manta-gallery
 - **Type**: Laravel Library Package
 - **License**: MIT
-- **Namespace**: `Darvis\Mantagallery`
+- **Namespace**: `Darvis\MantaGallery`
 

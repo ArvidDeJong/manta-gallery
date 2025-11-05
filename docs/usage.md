@@ -28,10 +28,10 @@ The same applies to gallery form submissions:
 ### Creating Gallery Forms
 
 ```php
-use Darvis\Mantagallery\Models\gallery;
+use Darvis\MantaGallery\Models\Gallery;
 
 // Create new gallery form
-$galleryForm = gallery::create([
+$galleryForm = Gallery::create([
     'title' => 'General Gallery Form',
     'subtitle' => 'Get in touch with us',
     'content' => 'Please fill out the form below...',
@@ -42,10 +42,10 @@ $galleryForm = gallery::create([
 ### Handling Submissions
 
 ```php
-use Darvis\Mantagallery\Models\gallerySubmission;
+use Darvis\MantaGallery\Models\GallerySubmission;
 
 // Add submission
-$submission = gallerySubmission::create([
+$submission = GallerySubmission::create([
     'firstname' => 'John',
     'lastname' => 'Doe',
     'email' => 'john@example.com',
@@ -60,7 +60,7 @@ For frontend gallery forms, you can use the submission model directly:
 
 ```php
 // In your controller
-use Darvis\Mantagallery\Models\gallerySubmission;
+use Darvis\MantaGallery\Models\GallerySubmission;
 use Illuminate\Http\Request;
 
 public function store(Request $request)
@@ -73,7 +73,7 @@ public function store(Request $request)
         'comment' => 'required|string',
     ]);
 
-    gallerySubmission::create($validated);
+    GallerySubmission::create($validated);
     
     return response()->json(['message' => 'Message sent successfully']);
 }
